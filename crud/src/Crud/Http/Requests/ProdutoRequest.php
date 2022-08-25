@@ -29,7 +29,9 @@ class ProdutoRequest extends FormRequest
     {
         return [
             'codigo' => ['required', Rule::unique('produtos')->ignore(optional(request('produto'))->id)], 
-            'titulo' => 'required', 
+            'titulo' => 'required',             
+            'tensao' => 'required', 
+            'marca' => 'required', 
             'valor' => 'required|numeric|min:0', 
         ];
     }
@@ -46,7 +48,9 @@ class ProdutoRequest extends FormRequest
         return [
             'codigo.required' => 'O campo código é obrigatório', 
             'codigo.unique' => 'O código escolhido já está sendo utilizado', 
-            'titulo.required' => 'O campo título do produto é obrigatório', 
+            'titulo.required' => 'O campo título do produto é obrigatório',             
+            'tensao.required' => 'O campo tensão  é obrigatório', 
+            'marca.required' => 'O campo marca  é obrigatório', 
             'valor.required' => 'O valor do produto é obrigatório', 
             'valor.numeric' => 'O valor deve ser um número'
         ];

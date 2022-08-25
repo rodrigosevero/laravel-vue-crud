@@ -94,11 +94,26 @@
                                 autocomplete="off">
                             <strong class="text-danger py-1 d-block" v-if="form.errors.has('titulo')"
                                 v-text="form.errors.get('titulo')"></strong>
-                        </div>
+                        </div>                        
                         <div class="form-group">
-                            <label for="observacao">Descrição</label>
-                            <textarea v-model="form.descricao" name="descricao" id="descricao" cols="30" rows="5"
-                                class="form-control"></textarea>
+                            <label for="codigo">Tensão *</label>
+                            <input v-model="form.tensao" type="text" name="tensao" id="tensao" class="form-control"
+                                autocomplete="off">                            
+                            <strong class="text-danger py-1 d-block" v-if="form.errors.has('tensao')"
+                                v-text="form.errors.get('tensao')"></strong>
+                        </div>
+                          <div class="form-group">
+                            <label for="codigo">Marca *</label>
+                            <select  v-model="form.marca" class="form-control" name="marca" id="marca">
+                                <option value=""></option>
+                                <option value="Eletrolux">Eletrolux</option>
+                                <option value="Brastemp">Brastemp</option>
+                                <option value="Fisher">Fisher</option>
+                                <option value="Samsumg">Samsumg</option>
+                                <option value="LG">LG</option>
+                            </select>                                                
+                            <strong class="text-danger py-1 d-block" v-if="form.errors.has('marca')"
+                                v-text="form.errors.get('marca')"></strong>
                         </div>
                         <div class="form-group">
                             <label for="valor">Valor *</label>
@@ -185,6 +200,9 @@ export default {
             form: new Form({
                 codigo: '',
                 titulo: '',
+                descricao: '',
+                tensao: '',
+                marca: '',
                 valor: '',
                 observacao: ''
             })
@@ -203,6 +221,8 @@ export default {
                 this.form.codigo = registro.codigo;
                 this.form.titulo = registro.titulo;
                 this.form.descricao = registro.descricao;
+                this.form.tensao = registro.tensao;
+                this.form.marca = registro.marca;
                 this.form.valor = registro.valor;
                 this.form.observacao = registro.observacao;
             } else {

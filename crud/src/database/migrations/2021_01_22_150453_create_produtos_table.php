@@ -17,8 +17,7 @@ class CreateProdutosTable extends Migration
             $table->id();
             $table->string('codigo')->unique();
             $table->string('titulo');
-            $table->integer('valor');
-            $table->text('descricao')->nullable();
+            $table->integer('valor');            
             $table->text('tensao')->nullable();
             $table->enum('marca', ['Electrolux', 'Brastemp', 'Fischer', 'Samsung', 'LG']);
             $table->text('observacao')->nullable();
