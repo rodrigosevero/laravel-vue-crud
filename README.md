@@ -3,15 +3,12 @@
 # CRUD - Laravel + Vue.js
 Repositório criado com o objetivo de apresentar um simples CRUD utilizando Laravel + Vue.js. A aplicação consiste no gerenciamento de produtos.
 
-## Demonstração
-Acessar a demo: [pedroroccon.com.br/laravel-vue-crud](http://pedroroccon.com.br/laravel-vue-crud/)
-
 ## Instalação e configuração
 Para realizar a instalação deste repositório, faça os seguintes passos em seu terminal:
 
 Clone o repositório em uma pasta  
 ```
-git clone https://github.com/pedroroccon/laravel-vue-crud
+git clone https://github.com/rodrigosevero/laravel-vue-crud
 ```
 
 Instale as dependência utilizando o Composer dentro do pasta do projeto  
@@ -30,18 +27,13 @@ Gere uma chave para a sua aplicação
 php artisan key:generate
 ```
 
-Por padrão, nós utilizamos SQLite como base de dados.  
-Caso você deseje continuar utilizando o SQLite, não se esqueça de criar o arquivo em database/database.sqlite  
-```
-touch database/database.sqlite
-```
+Faça configuração do .env com os dados do seu banco de dado. Nessa caso utilizamos o mysql
 
 Faça a migração das bases de dados  
 ```
 php artisan migrate --seed
 ```
 
-Não se esqueça de definir as permissões (caso necessário) nas pasta /bootstrap, /storage, /database.
 
 ## Iniciando a aplicação
 Você pode iniciar a aplicação através do comando:  
